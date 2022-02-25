@@ -8,7 +8,7 @@ export default {
     // 'nuxt-vite', elimanado nost stable
     'nuxt-webpack-optimisations', // optimizacion de la construccion
     'nuxt-gsap-module', // animaciones
-
+    'nuxt-compress',
     // '@nuxt/image', // si server.js es static
   ],
 

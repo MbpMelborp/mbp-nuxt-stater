@@ -1,6 +1,7 @@
 export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    analyze: true,
     transpile: ['gsap'],
     postcss: {
       // Add plugin names as key and arguments as value
