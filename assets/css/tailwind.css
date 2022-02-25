@@ -1,7 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @layer base {
+  @font-face {
+    font-family: 'font';
+    src: url(~/assets/fonts/b.woff) format('woff'),
+      url(~/assets/fonts/b.woff2) format('woff2');
+  }
+  html {
+    font-family: font, system-ui, sans-serif;
+  }
   body {
     @apply text-body;
   }

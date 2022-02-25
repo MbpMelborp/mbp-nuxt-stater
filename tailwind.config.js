@@ -12,6 +12,9 @@ module.exports = {
   darkMode: true, // or 'media' or 'class'
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['font', 'sans-serif'],
+      },
       gridTemplateColumns: {
         13: 'repeat(13, minmax(0, 1fr))',
       },

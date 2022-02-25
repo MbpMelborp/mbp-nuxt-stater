@@ -11,7 +11,7 @@
 [Markdown Link to Blog](/trigger)
 
 <nuxt-link to="/trigger">Nuxt Link to Blog</nuxt-link>
-
+ff
 ---
 
 title: Getting started
