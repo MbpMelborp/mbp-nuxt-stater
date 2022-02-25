@@ -11,10 +11,7 @@ export default {
   methods: {
     start() {
       console.log('LAODER start')
-      setTimeout(() => {
-        this.loading = true
-      }, 5000)
-      // this.loading = true
+      this.loading = true
     },
     finish() {
       console.log('LAODER finish')
@@ -24,33 +21,11 @@ export default {
   },
 }
 </script>
-<style scoped>
+<style lang="postcss" scoped>
 .loading-page {
-  position: fixed;
-  top: 0;
-  right: 0;
-  z-index: 1000;
-  padding: 1rem;
-  text-align: center;
-  font-size: 3rem;
-  font-family: sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  @apply bg-black-700 w-screen h-screen flex justify-center items-center;
 }
 .loading {
-  display: inline-block;
-  width: 1.5rem;
-  height: 1.5rem;
-  border: 4px solid rgba(9, 133, 81, 0.705);
-  border-radius: 50%;
-  border-top-color: #158876;
-  animation: spin 1s ease-in-out infinite;
-}
-@keyframes spin {
-  to {
-    -webkit-transform: rotate(360deg);
-  }
+  @apply inline-block h-32 w-32 border-8 border-t-0 border-green-600 rounded-full animate-spin;
 }
 </style>
