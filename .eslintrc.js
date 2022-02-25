@@ -18,6 +18,7 @@ module.exports = {
   plugins: ['prettier'],
   // add your custom rules here
   rules: {
+    'vue/multi-word-component-names': 'off',
     'no-console': 'off',
     'no-restricted-syntax': [
       'error',
@@ -29,7 +30,7 @@ module.exports = {
     ],
     'vue/no-v-html': 0,
     'nuxt/no-globals-in-created': 0,
-    'vue/multi-word-component-names': 'off',
+
     // [
     //   'warning',
     //   {

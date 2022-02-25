@@ -20,6 +20,8 @@
         </h1>
         <h2 class="subtitle">Starter for CodeSandBox</h2>
         <div class="text">
+          <nuxt-content :document="page" />
+
           <p>
             Bacon ipsum dolor amet short ribs fatback ham shank chislic boudin
             jowl turkey kevin. Jowl ribeye bacon buffalo pastrami pork chop
@@ -271,6 +273,13 @@ import globalMixin from '~/mixins/globals.js'
 export default {
   name: 'IndexPage',
   mixins: [globalMixin],
+  async asyncData({ $content }) {
+    const page = await $content('hello').fetch()
+
+    return {
+      page,
+    }
+  },
   mounted() {
     this.$nextTick(() => {
       this.$nuxt.$emit('update-locomotive')

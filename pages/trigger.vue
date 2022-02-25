@@ -17,32 +17,100 @@
         <h1>Gsap Scroll Trigger</h1>
       </header>
       <div class="example-section" data-scroll-section>
-        <div class="example-content">
-          <div class="example-big-square" />
+        <div
+          v-gsap.fromTo="[
+            { opacity: 0, y: -350 },
+            { opacity: 1, y: 0, duration: 3 },
+          ]"
+          class="example-content"
+        >
+          <div class="example-big-square">
+            <NuxtImg
+              provider="storyblok"
+              width="500"
+              height="500"
+              fit="in"
+              format="webp"
+              quality="80"
+              :modifiers="{ filters: { fill: 'CCCCCC' } }"
+              src="https://a.storyblok.com/f/39898/3310x2192/e4ec08624e/demo-image.jpeg"
+            />
+          </div>
           <div class="example-small-square" data-scroll-trigger />
         </div>
       </div>
       <div class="example-section" data-scroll-section>
         <div class="example-content">
-          <div class="example-small-square" data-scroll-trigger />
-          <div class="example-big-square" />
+          <div class="example-small-square" data-scroll-trigger>
+            <nuxt-img
+              format="webp"
+              quality="80"
+              src="https://random.imagecdn.app/800/600"
+              @load="imageLoaded"
+            />
+          </div>
+          <div class="example-big-square">
+            <NuxtImg
+              width="600"
+              height="130"
+              provider="storyblok"
+              src="https://a.storyblok.com/f/39898/2250x1500/c15735a73c/demo-image-human.jpeg"
+              @load="imageLoaded"
+            />
+            <NuxtImg
+              width="600"
+              height="130"
+              :modifiers="{ smart: true }"
+              provider="storyblok"
+              src="https://a.storyblok.com/f/39898/2250x1500/c15735a73c/demo-image-human.jpeg"
+              @load="imageLoaded"
+            />
+          </div>
         </div>
       </div>
       <div class="example-section" data-scroll-section>
         <div class="example-content">
-          <div class="example-big-square" />
-          <div class="example-small-square" data-scroll-trigger />
+          <div class="example-big-square">
+            <nuxt-img
+              format="webp"
+              quality="80"
+              src="https://random.imagecdn.app/800/600"
+              sizes="sm:100vw md:50vw lg:400px"
+              @load="imageLoaded"
+            />
+          </div>
+
+          <div class="example-small-square" data-scroll-trigger>
+            <NuxtImg
+              width="600"
+              height="130"
+              :modifiers="{ filters: { focal: '450x500:550x600' } }"
+              provider="storyblok"
+              src="https://a.storyblok.com/f/39898/1000x600/d962430746/demo-image-human.jpeg"
+              @load="imageLoaded"
+            />
+            <NuxtImg
+              width="600"
+              height="130"
+              :modifiers="{ filters: { focal: '450x0:550x100' } }"
+              provider="storyblok"
+              src="https://a.storyblok.com/f/39898/1000x600/d962430746/demo-image-human.jpeg"
+              @load="imageLoaded"
+            />
+          </div>
         </div>
       </div>
       <footer data-scroll-section>
-        <nuxt-link to="/image-loads/"> Go to Image Loads </nuxt-link>
+        <nuxt-link to="/"> Go to Image Loads </nuxt-link>
       </footer>
     </div>
   </LocomotiveScroll>
 </template>
 
 <script>
+import globalMixin from '~/mixins/globals.js'
 export default {
+  mixins: [globalMixin],
   data: () => ({
     locomotive: undefined,
   }),
